@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+  />
+  <link rel="icon" type="image/png" href="/static/images/logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMCO</title>
+      <style>
+
+html,body
+{
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  height: 100%;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+
+/*call us*/
+a{
+  text-decoration: none;
+}
+
+/*change2*/
+.call {
+  max-width: 120px;
+  height: 40px;
+  background: #ffffff;
+  position: relative;
+  right: -1200px;
+  bottom: 74px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;  /* Center vertically */
+  justify-content: space-between;  /* Space between elements */
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 30;
+}
+
+.call h2 {
+  position: relative;
+  font-size: 14px;
+  left: 52px;
+  bottom: 2.7px !important;
+  color: lightgreen;
+}
+
+.circle1,
+.circle2 {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle1 {
+  animation: animate1 2.5s linear infinite;
+}
+
+.circle2 {
+  animation: animate2 2.5s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    width: 25px;
+    height: 25px;
+    background-color: rgb(36, 167, 64);
+    top: 10px;
+    left: 7px;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(134, 78, 13, 0);
+    top: -2px;
+    left: 5px;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    width: 25px;
+    height: 25px;
+    background-color: rgb(36, 167, 64);
+    top: 10px;
+    left: 7px;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(134, 78, 13, 0);
+    top: -2px;
+    left: 5px;
+  }
+}
+
+.phone {
+  width: 60px;
+  height: 44px;
+  position: absolute;
+  z-index: 5;
+}
+
+.phone img {
+  width: 80%;
+}
+
+@media (min-width: 501px) and (max-width: 819px) {
+  /*change2*/
+  nav ul li a{
+    text-decoration: none;
+    color: teal;
+    font-size: 12px;
+    position: relative;
+    align-items: center;  /* Center vertically */
+    justify-content: space-between;  /* Space between elements */
+    left: -10px;
+    font-family: poppins, sans-serif;
+  }
+  .call {
+    width: 110px;
+    height: 41px;
+    background: #ffffff;
+    position: relative;
+    right: -320px;
+    bottom: 74px;
+    border-radius: 25px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 60;
+  }
+  
+  .call h2 {
+    position: relative;
+    font-size: 14px;
+    left: 46px;
+    bottom: -.3px;
+    color: lightgreen;
+  }
+  
+  .circle1,
+  .circle2 {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .circle1 {
+    animation: animate1 2.5s linear infinite;
+  }
+  
+  .circle2 {
+    animation: animate2 2.5s linear infinite;
+  }
+  
+  @keyframes animate1 {
+    0% {
+      width: 25px;
+      height: 25px;
+      background-color: rgb(36, 167, 64);
+      top: 10px;
+      left: 7px;
+    }
+    100% {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(134, 78, 13, 0);
+      top: -2px;
+      left: 5px;
+    }
+  }
+  
+  @keyframes animate2 {
+    0% {
+      width: 25px;
+      height: 25px;
+      background-color: rgb(36, 167, 64);
+      top: 10px;
+      left: 7px;
+    }
+    100% {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(134, 78, 13, 0);
+      top: -2px;
+      left: 5px;
+    }
+  }
+  
+  .phone {
+    width: 60px;
+    height: 44px;
+    position: absolute;
+    z-index: 5;
+  }
+  
+  .phone img {
+    width: 80%;
+  }
+  }
+
+  @media (min-width: 360px) and (max-width: 501px) {
+    /*change2*/
+    nav ul li a{
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 12px;
+      position: relative;
+      left: -10px;
+      font-family: poppins, sans-serif;
+    }
+    
+    .call {
+      width: 110px;
+      height: 41px;
+      background: #ffffff;
+      position: relative;
+      align-items: center;  /* Center vertically */
+      justify-content: space-between;  /* Space between elements */ 
+      right: -140px;
+      bottom: 74px;
+      border-radius: 25px;
+      display: flex;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 60;
+    }
+    
+    .call h2 {
+      position: relative;
+      font-size: 14px;
+      left: 48px;
+      bottom: -.3px;
+      color: lightgreen;
+    }
+    
+    .circle1,
+    .circle2 {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      position: absolute;
+    }
+    
+    .circle1 {
+      animation: animate1 2.5s linear infinite;
+    }
+    
+    .circle2 {
+      animation: animate2 2.5s linear infinite;
+    }
+    
+    @keyframes animate1 {
+      0% {
+        width: 25px;
+        height: 25px;
+        background-color: rgb(36, 167, 64);
+        top: 10px;
+        left: 7px;
+      }
+      100% {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(134, 78, 13, 0);
+        top: -2px;
+        left: 5px;
+      }
+    }
+    
+    @keyframes animate2 {
+      0% {
+        width: 25px;
+        height: 25px;
+        background-color: rgb(36, 167, 64);
+        top: 10px;
+        left: 7px;
+      }
+      100% {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(134, 78, 13, 0);
+        top: -2px;
+        left: 5px;
+      }
+    }
+    
+    .phone {
+      width: 60px;
+      height: 44px;
+      position: absolute;
+      z-index: 5;
+    }
+    
+    .phone img {
+      width: 80%;
+    }
+    }
+
+
+
+@media (min-width: 820px) and (max-width: 930px) {
+/*change2*/
+.call {
+  width: 110px;
+  height: 41px;
+  background: #ffffff;
+  position: relative;
+  right: -690px;
+  bottom: 74px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;  /* Center vertically */
+  justify-content: space-between;  /* Space between elements */
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 60;
+}
+
+.call h2 {
+  position: relative;
+  font-size: 16px;
+  left: 42px;
+  bottom: -1.3px;
+  color: lightgreen;
+}
+
+.circle1,
+.circle2 {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle1 {
+  animation: animate1 2.5s linear infinite;
+}
+
+.circle2 {
+  animation: animate2 2.5s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    width: 25px;
+    height: 25px;
+    background-color: rgb(36, 167, 64);
+    top: 10px;
+    left: 7px;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(134, 78, 13, 0);
+    top: -2px;
+    left: 5px;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    width: 25px;
+    height: 25px;
+    background-color: rgb(36, 167, 64);
+    top: 10px;
+    left: 7px;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(134, 78, 13, 0);
+    top: -2px;
+    left: 5px;
+  }
+}
+
+.phone {
+  width: 60px;
+  height: 44px;
+  position: absolute;
+  z-index: 5;
+}
+
+.phone img {
+  width: 80%;
+}
+}
+@media (min-width: 931px) and (max-width: 1048px) {
+  .call {
+    width: 110px;
+    height: 41px;
+    background: #ffffff;
+    position: relative;
+    right: -795px;
+    bottom: 74px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;  /* Center vertically */
+    justify-content: space-between;  /* Space between elements */
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 60;
+  }
+  .call h2 {
+    position: relative;
+    font-size: 16px;
+    left: 42px;
+    bottom: 1.3px;
+    color: lightgreen;
+  }
+}
+@media (min-width: 1048px) and (max-width: 1155px) {
+  .call {
+    width: 110px;
+    height: 41px;
+    background: #ffffff;
+    position: relative;
+    right: -905px;
+    bottom: 75px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;  /* Center vertically */
+    justify-content: space-between;  /* Space between elements */
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 60;
+  }
+  .call h2 {
+    position: relative;
+    font-size: 16px;
+    left: 42px;
+    bottom: 1.3px;
+    color: lightgreen;
+  }
+}
+
+
+@media (min-width: 1215px) and (max-width: 1399px) {
+  .call {
+    width: 110px;
+    height: 41px;
+    background: #ffffff;
+    align-items: center;  /* Center vertically */
+    justify-content: space-between;  /* Space between elements */
+    position: relative;
+    right: -1100px;
+    bottom: 78px;
+    border-radius: 25px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 60;
+
+  }
+  .call h2 {
+    position: relative;
+    font-size: 16px;
+    left: 42px;
+    bottom: 1.3px;
+    color: lightgreen;
+  }
+}
+@media (min-width: 1156px) and (max-width: 1214px) {
+  .call {
+    width: 110px;
+    height: 41px;
+    background: #ffffff;
+    align-items: center;  /* Center vertically */
+    justify-content: space-between;  /* Space between elements */
+    position: relative;
+    right: -980px;
+    bottom: 78px;
+    border-radius: 25px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 60;
+
+  }
+  .call h2 {
+    position: relative;
+    font-size: 16px;
+    left: 42px;
+    bottom: 4.3px;
+    color: lightgreen;
+  }
+  h2{
+    position: relative;
+    left: 100px;
+  }
+  .job{
+    position: relative;
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 374){
+
+  .call {
+    width: 80px;
+    height: 43px;
+    background: #ffffff;
+    position: relative;
+    right: -20px;
+    bottom: 34px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;  /* Center vertically */
+    justify-content: space-between;  /* Space between elements */
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 60;
+  }
+  
+}
+        .container {
+            margin-top: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-weight: 100;
+            font-family: poppins,sans-serif;
+        }
+        h2{
+          font-weight: 100;
+          font-family: poppins, sans-serif;
+          position: relative;
+          left: 100px;
+
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        @media (max-width:820px) {
+  nav ul{
+      position: absolute;
+      top: 70px;
+      color: #000;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px); /* Blur effect */
+      -webkit-backdrop-filter: blur(10px); /* For Safari */
+      z-index: 7;
+      gap: 0;
+      overflow: hidden;
+  }
+  nav ul li{
+      padding: 4px;
+      height: 900px;
+      padding-top: 27px;;
+     color: transparent;
+  }
+  nav ul li a{
+    color: teal;
+  }
+  .menu-icon{
+      display: block;
+      z-index: 999;
+  }
+  #menuList{
+      transition: all 0.5s;
+      color: teal;
+  }
+
+  .header{
+    z-index: 10;
+  }
+}
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #11474D;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0A2C2F;
+        }
+        .job {
+            margin-top: 20px;
+            padding: 10px;
+            padding-left: 100px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        body.vacancy-page #vacancy {
+        color: black; /* Active color for Vacancy link */
+        font-weight: bold;
+      }
+      #top{
+  position: relative;
+  top: 0;
+}
+@media (min-width: 350px) and (max-width: 576px) {
+  .footer{
+    position: relative;
+    top: 10px !important;
+    height: 340px;
+  }
+  .footer-col2 .social-links a i {
+        display: flex;
+        position: relative;
+        top: 25%;
+        left: 25%;
+        
+    }
+  .copy{
+    position: relative;
+    top: 90px;
+  }
+
+  }
+  .footer{
+  position: relative;
+  top: 30px;
+}
+    </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body class="vacancy-page" id="vacancy1">
+  <div class="arrow">
+    <a href="#top" title="Back to Top"><span class="fas fa-angle-up"></span></a>
+  </div>
+  <div class="arrow1">
+    <a href="#footer" title="Scroll to Bottom" onclick="scrollToBottom()"><span class="fas fa-angle-down"></span></a>
+</div>
+<!-- Header -->
+<header class="header" id="header">
+  <nav>
+    <div class="logo-container">
+      <a href="/"><img src="/static/images/logo.png" alt="Your Logo" class="logo"></a>
+    </div>
+    <ul id="menuList">
+      <li><a id="home" href="/">Home</a></li>
+      <li class="dropdown">
+        <a class="dropbtn" href="#" onclick="toggleDropdown()" onmouseover="showDropdown()">About
+          <span class="fas fa-angle-down"></span>
+        </a>
+        <div class="dropdown-content" id="dropdownMenu">
+          <a id="about" href="/about">Who We Are</a>
+          <a href="/">Portfolio</a>
+        </div>
+      </li>
+      <li><a href="/">Service</a></li>
+      <li><a id="products" href="/prod">Products</a></li>
+      <li><a href="/">Contact</a></li>
+      <li><a id="vacancy" href="/">Vacancy</a></li>
+      <li><a id="login" href="sagin"><i class="fas fa-user"></i></a></li>
+    </ul>
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+    </div>
+    <a href="tel:+1234567890">
+      <div class="call">
+        <h2>Call Us</h2>
+        <div class="phone">
+          <img src="/static/images/call.png" alt="Call Icon">
+        </div>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+      </div>
+    </a>
+    <!--call button-->
+  </nav>
+  
+</header>
+
+<div class="social-widget">
+  <a href="#" class="social-icon " data-social="Telegram"><i class="fab fa-telegram"></i><span class="social-name">Telegram</span></a>
+  <a href="#" class="social-icon " data-social="Instagram"><i class="fab fa-instagram"></i><span class="social-name">Instagram</span></a>
+  <a href="https://www.facebook.com/profile.php?id=61559804274395" class="social-icon " data-social="Facebook"><i class="fab fa-facebook"></i><span class="social-name">Facebook</span></a>
+  <a href="#" class="social-icon " data-social="LinkedIn"><i class="fab fa-linkedin"></i><span class="social-name">LinkedIn</span></a>
+  <a href="#" class="social-icon " data-social="YouTube"><i class="fab fa-youtube"></i><span class="social-name">YouTube</span></a>
+  <a href="https://www.tiktok.com/@amco_interiorfurniture?_t=8mXEfzKb4HV&_r=1" class="social-icon " data-social="TikTok"><i class="fab fa-tiktok"></i><span class="social-name">TikTok</span></a>
+</div>
+
+     <div id="top"></div>
+
+    <div class="container">
+        <h1>Job Vacancies</h1>
+
+        <form action="{{ url_for('search') }}" method="post">
+            <input type="text" name="search_term" placeholder="Search by title">
+            <button type="submit">Search</button>
+        </form>
+
+        <h2>All Jobs</h2>
+        {% for job in jobs %}
+        <div class="job">
+            <h3>{{ job.title }}</h3>
+            <p>{{ job.description }}</p>
+            <p>{{ job.requirements }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="/about">about us</a></li>
+              <li><a href="/home">our services</a></li>
+              <li><a href="/prod">produts</a></li>
+              <li><a href="/home">portfolio</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Amco</h4>
+            <ul>
+              <li><a href="/prod">Our furniture </a></li>
+              <li><a href="/bloog" id="blog">Blog</a></li>
+              <li><a href="/bloog" id="blog">News</a></li>
+              <li><a href="/bloog" id="blog">Event</a></li>
+  
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="mailto:amco18630@gmail.com">email<br>
+                amco18630@gmail.com</a>
+              </li>
+              <li><a href="#">Location<br>
+                  Meskelflower infront of Dreamlinerhotel </a></li>
+              <li><a href="tel:0945371779">phone <br />
+                0945371779</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col2">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/profile.php?id=61559804274395"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/amco_interiorfurniture/?igsh=MTR5b3dubWJibm9qdw%3D%3D"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.tiktok.com/@amco_interiorfurniture?_t=8mXEfzKb4HV&_r=1"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copy">
+          Copyright 2024 © || 
+          <a href="https://www.instagram.com/namikdevelopment/?igsh=dG5pbzIxdDdzaTUz" class="namik">Designed By NAMIK DEVELOPMENT</a>
+            
+        </div>
+      </div>
+    </footer>
+  
+  
+    <script>
+      let menuList = document.getElementById("menuList")
+      menuList.style.maxHeight = "0px";
+      function toggleMenu(){
+          if(menuList.style.maxHeight == "0px")
+          {
+              menuList.style.maxHeight = "300px";
+          }
+          else{
+              menuList.style.maxHeight = "0px";
+          }
+      }</script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script>document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.gallery-image');
+      const videoModal = document.getElementById('video-modal');
+      const videoContainer = document.getElementById('video-container');
+      const closeBtn = document.getElementById('close-btn');
+    
+      images.forEach(image => {
+        image.addEventListener('click', function() {
+          const videoId = this.getAttribute('data-video-id');
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          iframe.allowFullscreen = true;
+    
+          // Get position and size of clicked image
+          const rect = image.getBoundingClientRect();
+          const imageWidth = rect.width;
+          const imageHeight = rect.height;
+          const imageTop = rect.top + window.scrollY;
+          const imageLeft = rect.left + window.scrollX;
+    
+          // Set video modal position
+          videoModal.style.top = imageTop + 'px';
+          videoModal.style.left = imageLeft + 'px';
+    
+          // Set video container size
+          videoContainer.style.width = imageWidth + 'px';
+          videoContainer.style.height = imageHeight + 'px';
+    
+          videoContainer.appendChild(iframe);
+          videoModal.style.display = 'block';
+        });
+      });
+    
+      closeBtn.addEventListener('click', function() {
+        videoContainer.innerHTML = ''; // Clear the iframe content
+        videoModal.style.display = 'none';
+      });
+    
+      // Close the modal when clicking outside the video container
+      window.addEventListener('click', function(event) {
+        if (event.target === videoModal) {
+          videoContainer.innerHTML = ''; // Clear the iframe content
+          videoModal.style.display = 'none';
+        }
+      });
+    });
+    </script>
+    <script>
+      document.querySelectorAll('iframe').forEach(iframe => {
+          // Adding a message event listener to detect video play and pause events
+          window.addEventListener('message', function(event) {
+              const data = JSON.parse(event.data);
+              if (data.event === 'infoDelivery' && data.info) {
+                  if (data.info.playerState === 1) {
+                      // Video is playing
+                      document.querySelector('.slides').style.animationPlayState = 'paused';
+                  } else if (data.info.playerState === 2) {
+                      // Video is paused
+                      document.querySelector('.slides').style.animationPlayState = 'running';
+                  }
+              }
+          });
+  
+          // Function to send a postMessage to the YouTube iframe
+          function sendMessage(action, value) {
+              iframe.contentWindow.postMessage(JSON.stringify({
+                  event: 'command',
+                  func: action,
+                  args: [value]
+              }), '*');
+          }
+  
+          // Attach event listener to check when iframe is interacted with
+          iframe.addEventListener('load', () => {
+              sendMessage('addEventListener', 'onStateChange');
+          });
+      });
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuIcon = document.querySelector('.menu-icon');
+      const navLinks = document.querySelector('.nav-links');
+    
+      menuIcon.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+      });
+    });
+    
+    let slideIndex = 0;
+    showSlide(slideIndex);
+    
+    function showSlide(n) {
+        const slides = document.querySelectorAll('.carousel img');
+        const dots = document.querySelectorAll('.dot');
+    
+        // Hide all slides and remove active class from dots
+        slides.forEach(slide => slide.style.display = "none");
+        dots.forEach(dot => dot.classList.remove("active"));
+    
+        // Adjust slide index to ensure it stays within bounds
+        slideIndex = (n + slides.length) % slides.length;
+    
+        // Show current slide and set corresponding dot as active
+        slides[slideIndex].style.display = "block";
+        dots[slideIndex].classList.add("active");
+    }
+    
+    // Event listener for previous button
+    document.getElementById("prev").addEventListener("click", function() {
+        showSlide(slideIndex - 1);
+    });
+    
+    // Event listener for next button
+    document.getElementById("next").addEventListener("click", function() {
+        showSlide(slideIndex + 1);
+    });
+    
+    // Automatic slide change every 3 seconds
+    setInterval(function() {
+        showSlide(slideIndex + 1);
+    }, 3000);
+    
+    
+    // Function to start counting animation
+    function startCountingAnimation(targetElement) {
+        const startNumber = 1; // Start counting from 1
+        const endNumber = 100;
+        const duration = 4000; // Animation duration in milliseconds
+        const steps = endNumber - startNumber; // Total steps from start to end
+        const interval = duration / steps; // Interval for each step
+      
+        let currentNumber = startNumber;
+        const increment = 1; // Increment by 1 for each step
+      
+        const intervalId = setInterval(() => {
+          if (currentNumber <= endNumber) {
+            // Update the displayed number
+            targetElement.textContent = currentNumber;
+            currentNumber += increment;
+          } else {
+            // Display "100+" when the count reaches 100
+            targetElement.textContent = "100+";
+            // Stop the interval when reaching the end number
+            clearInterval(intervalId);
+          }
+        }, interval);
+      }
+      
+      // Function to observe element intersection
+      function CountingAnimation(countingRef, startCountingAnimation) {
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.5 // Trigger when 50% of the target element is visible
+        };
+      
+        const callback = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startCountingAnimation(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        };
+      
+        const observer = new IntersectionObserver(callback, options);
+        if (countingRef) {
+          observer.observe(countingRef);
+        }
+      
+        return () => {
+          if (countingRef) {
+            observer.unobserve(countingRef);
+          }
+        };
+      }
+      
+      // Get references to the counting containers
+      const countingRefCr3 = document.getElementById("countingCr3");
+      const countingRefCr6 = document.getElementById("countingCr6");
+      
+      // Start counting animation for cr3
+      CountingAnimation(countingRefCr3, startCountingAnimation);
+      // Start counting animation for cr6
+      CountingAnimation(countingRefCr6, startCountingAnimation);
+      
+    
+      // When the page is scrolled, check if the scroll position is greater than 100 pixels
+    // Smooth scroll to the top when the arrow is clicked
+    $('.arrow a').click(function() {
+      $('html, body').animate({
+        scrollTop: 0
+      }, 500); // Adjust the duration (in milliseconds) here for faster scrolling
+      return false;
+    });
+    /* */
+    
+    
+    /*socialmedia */
+    document.addEventListener('DOMContentLoaded', function() {
+      const socialIcons = document.querySelectorAll('.social-icon');
+      
+      socialIcons.forEach(icon => {
+        icon.addEventListener('click', function(event) {
+          event.preventDefault();
+          const socialName = icon.getAttribute('data-social');
+          const socialUrl = getSocialUrl(socialName);
+          window.open(socialUrl, '_blank');
+        });
+      });
+      
+      function getSocialUrl(socialName) {
+        // Define your social media URLs
+        const socialUrls = {
+          'Telegram': 'https://telegram.org/',
+          'Instagram': 'https://www.instagram.com/amco_interiorfurniture/?igsh=MTR5b3dubWJibm9qdw%3D%3D',
+          'Facebook': 'https://www.facebook.com/profile.php?id=61559804274395',
+          'LinkedIn': 'https://www.linkedin.com/',
+          'YouTube': 'https://www.youtube.com/@Amco-kv7zz',
+          'TikTok': 'https://www.tiktok.com/@amco_interiorfurniture?_t=8mXEfzKb4HV&_r=1'
+        };
+        return socialUrls[socialName];
+      }
+    });
+    
+    
+    
+    
+        function sendEmail() {
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+    
+            // Send email using EmailJS
+            emailjs.send("service_l4r6gkd", "template_ab6zjtk", {
+                from_name: name,
+                from_email: email,
+                phone: phone,
+                message: message
+            })
+            .then(function(response) {
+                console.log("Email sent successfully", response);
+                alert("Your message has been sent successfully!");
+                // Optionally, clear the form fields
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('message').value = '';
+            }, function(error) {
+                console.error("Error sending email", error);
+                alert("An error occurred while sending your message. Please try again later.");
+            });
+        }
+        /* slider*/
+        document.addEventListener('DOMContentLoaded', function() {
+          const slides = document.querySelectorAll('.slider img');
+          const navButtons = document.querySelectorAll('.slider-nav a');
+          let currentSlide = 0;
+          let intervalId;
+      
+          function showSlide(index) {
+              slides.forEach((slide, i) => {
+                  if (i === index) {
+                      slide.style.display = 'block';
+                  } else {
+                      slide.style.display = 'none';
+                  }
+              });
+          }
+      
+          function nextSlide() {
+              currentSlide = (currentSlide + 1) % slides.length;
+              showSlide(currentSlide);
+          }
+      
+          function prevSlide() {
+              currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+              showSlide(currentSlide);
+          }
+      
+          function startAutoPlay() {
+              intervalId = setInterval(nextSlide, 3000);
+          }
+      
+          function stopAutoPlay() {
+              clearInterval(intervalId);
+          }
+      
+          // Add event listeners to navigation buttons
+          navButtons.forEach((button, index) => {
+              button.addEventListener('click', function(event) {
+                  event.preventDefault();
+                  stopAutoPlay();
+                  currentSlide = index;
+                  showSlide(currentSlide);
+                  startAutoPlay();
+              });
+          });
+      
+          // Start auto-play
+          startAutoPlay();
+      });
+      
+    /* hoMEjs*/
+    const myslide = document.querySelectorAll('.myslide'),
+          dot = document.querySelectorAll('.dot');
+    let counter = 1;
+    slidefun(counter);
+    
+    let timer = setInterval(autoSlide, 8000);
+    function autoSlide() {
+        counter += 1;
+        slidefun(counter);
+    }
+    function plusSlides(n) {
+        counter += n;
+        slidefun(counter);
+        resetTimer();
+    }
+    function currentSlide(n) {
+        counter = n;
+        slidefun(counter);
+        resetTimer();
+    }
+    function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(autoSlide, 8000);
+    }
+    
+    function slidefun(n) {
+        
+        let i;
+        for(i = 0;i<myslide.length;i++){
+            myslide[i].style.display = "none";
+        }
+        for(i = 0;i<dot.length;i++) {
+            dot[i].className = dot[i].className.replace(' active', '');
+        }
+        if(n > myslide.length){
+           counter = 1;
+           }
+        if(n < 1){
+           counter = myslide.length;
+           }
+        myslide[counter - 1].style.display = "block";
+        dot[counter - 1].className += " active";
+    }
+    /*email */
+    
+    emailjs.init('D3VuuvmzMea1ZpQ3l');
+    
+      // Event listener for form submission
+      document.getElementById('submit-btn').addEventListener('click', function() {
+        sendEmail();
+      });
+    
+    function sendEmail() {
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+    
+      // Send email using EmailJS
+      emailjs.send("service_l4r6gkd", "template_ab6zjtk", {
+        from_name: name,
+        from_email: email,
+        phone: phone,
+        message: message
+      })
+      .then(function(response) {
+        console.log("Email sent successfully", response);
+        // Show success message
+        showAlert("Your message has been sent successfully!");
+        // Optionally, clear the form fields
+        clearFormFields();
+    }, function(error) {
+        console.error("Error sending email", error);
+        // Show error message
+        showAlert("An error occurred while sending your message. Please try again later.", true);
+    });
+    }
+    
+    function showAlert(message, isError = false) {
+    alert(message); // Simple alert popup
+    // You can customize this to use a styled modal dialog for a better user experience
+    }
+    
+    function clearFormFields() {
+    // Clear form fields
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('message').value = '';
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const lines = document.querySelectorAll('.for-decades-amco .line');
+    
+      // Function to trigger auto-write animation for each line
+      function autoWriteLine(line) {
+        // Start animation
+        line.style.animation = 'autoWrite 1s steps(40) forwards';
+        // Add event listener for animation end
+        line.addEventListener('animationend', function() {
+          // Ensure line remains visible after animation
+          line.style.opacity = '1';
+          // Hide the border line
+          line.classList.add('hide-border');
+          // Show the next line if available
+          const nextLineIndex = Array.from(lines).indexOf(this) + 1;
+          if (nextLineIndex < lines.length) {
+            autoWriteLine(lines[nextLineIndex]);
+          }
+        });
+      }
+    
+      // Trigger the animation sequence for the first line
+      autoWriteLine(lines[0]);
+    });
+    
+    
+    
+    document.addEventListener('DOMContentLoaded', (event) => {
+      let items = document.querySelectorAll('.carousel-container .carousel-list .carousel-item');
+      let container = document.querySelector('.carousel-container');
+      let dots = document.querySelectorAll('.carousel-dots li');
+      let nextBtn = document.querySelector('.carousel-arrows .next');
+      let prevBtn = document.querySelector('.carousel-arrows .prev');
+    
+      let lastIndex = items.length - 1;
+      let activeIndex = 0;
+      let zIndex = 2;
+    
+      nextBtn.onclick = () => {
+          let newIndex = activeIndex + 1 > lastIndex ? 0 : activeIndex + 1;
+          setActiveItem(newIndex);
+      };
+    
+      prevBtn.onclick = () => {
+          let newIndex = activeIndex - 1 < 0 ? lastIndex : activeIndex - 1;
+          setActiveItem(newIndex);
+      };
+    
+      dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+              setActiveItem(index);
+          });
+      });
+    
+      const setActiveItem = (newIndex) => {
+          if (newIndex === activeIndex) return;
+          activeIndex = newIndex;
+          showSlider();
+      };
+    
+      const showSlider = () => {
+          container.style.pointerEvents = 'none';
+          let activeItem = document.querySelector('.carousel-container .carousel-list .carousel-item.active');
+          if (activeItem) activeItem.classList.remove('active');
+          zIndex++;
+          items[activeIndex].style.zIndex = zIndex;
+          items[activeIndex].classList.add('active');
+    
+          container.classList.add('effect');
+    
+          let activeDot = document.querySelector('.carousel-dots li.active');
+          if (activeDot) activeDot.classList.remove('active');
+          dots[activeIndex].classList.add('active');
+    
+          clearTimeout(removeEffect);
+          removeEffect = setTimeout(() => {
+              container.classList.remove('effect');
+              container.style.pointerEvents = 'auto';
+          }, 1500);
+    
+          clearTimeout(autoRun);
+          autoRun = setTimeout(() => {
+              nextBtn.click();
+          }, 5000);
+      };
+    
+      let removeEffect;
+      let autoRun = setTimeout(() => {
+          nextBtn.click();
+      }, 5000);
+    });
+  </script>
+  
+    </body>
+    <script>
+      function toggleDropdown() {
+        var dropdown = document.getElementById("dropdownMenu");
+        if (dropdown.style.display === "block") {
+          dropdown.style.display = "none";
+        } else {
+          dropdown.style.display = "block";
+        }
+      }
+    
+      function showDropdown() {
+        var dropdown = document.getElementById("dropdownMenu");
+        dropdown.style.display = "block";
+      }
+    
+      // Hide dropdown when clicking outside
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+              openDropdown.style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+    
+  </html>
+  
+  
+  
+  
+  <!--
+    <button class='last1'> Contact Us</button>
+          <div class='sl219'></div> 
+          <div class="container26">
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="tel" id="phone" placeholder="Your Phone Number">
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="button" id="submit-btn" class="button4">Submit</button>
+              </form>
+        </div>
+        <div class="success-message" id="success-message">
+          <p>Message sent successfully!</p>
+        </div>
+               <div class="contactf50">
+                 <div class="contact-info1">
+                   <div class='cont5'>
+                   <p>Email </p>
+                   <p>Phone </p>
+                   <p>Location </p>
+                   </div>
+                   <div class="nu1">
+                   <p>smcakcmak@gmail.com</p>
+                   <p>+251-9-00-00-00</p>
+                   <p> kscamcsmcnxcx</p>
+                   </div>     
+                 </div>
+               </div>
+             <h6 class='li'>Copyright 2024 © </h6>
+  
+             <div class="form-container">
+          <div class="animation-container" id="animation-container"></div>
+          <form class="contact-form">
+              <h2>Contact Us</h2>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+              
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+              
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+              
+              <button type="submit">Send</button>
+          </form>
+      </div>
+  -->
+

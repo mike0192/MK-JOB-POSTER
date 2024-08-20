@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AMCO</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+        body {
+            background: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar-default {
+            background-color: #11474D;
+            border-color: #11474D;
+        }
+        .navbar-default .navbar-brand {
+            color: white;
+        }
+        .navbar-default .navbar-nav>li>a {
+            color: white;
+        }
+        .navbar-default .navbar-nav>li>a:hover,
+        .navbar-default .navbar-nav>li>a:focus {
+            background-color: #0A2C2F;
+            color: white;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .table th {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        .table td {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            margin-top: 10px;
+        }
+        nav ul li{
+          position: relative;
+          right: 300px;
+        }
+        .navbar-right {
+            margin-right: 20px;
+        }
+        .navbar-right a {
+            color: white;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <body class="login-page">
+       
+        <!-- Header -->
+        <header class="header" id="header">
+          <nav>
+            <div class="logo-container">
+              <a href="/"><img src="/static/images/logo.png" alt="Your Logo" class="logo"></a>
+            </div>
+            <ul id="menuList">
+              <li><a id="home" href="/">Home</a></li>
+              <li class="dropdown">
+                <a class="dropbtn" href="#" onclick="toggleDropdown()" onmouseover="showDropdown()">About
+                  <span class="fas fa-angle-down"></span>
+                </a>
+                <div class="dropdown-content" id="dropdownMenu">
+                  <a id="about" href="/about">WHO WE ARE</a>
+                  <a href="/">Portfolio</a>
+                </div>
+              </li>
+              <li><a href="/">Service</a></li>
+              <li><a id="products" href="/prod">Products</a></li>
+              <li><a href="/">Contact</a></li>
+              <li><a id="vacancy" href="/">Vacancy</a></li>
+        <li><a id="login" href="sagin"><i class="fas fa-user"></i></a></li>
+      </ul>
+      <div class="menu-icon">
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+      </div>
+    </nav>
+  </header>
+
+    <div class="container">
+        <h1>Applied Jobs - Job ID: {{ job_id }}</h1>
+
+        {% if applied_jobs %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>First Name</th> <!-- Change from Name to First Name -->
+                        <th>Father Name</th> <!-- New column for Father Name -->
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for applied_job in applied_jobs %}
+                        <tr>
+                            <td>{{ applied_job.first_name }}</td> <!-- Change to first_name -->
+                            <td>{{ applied_job.father_name }}</td> <!-- New column for father_name -->
+                            <td>{{ applied_job.applicant_email }}</td>
+                            <td>{{ applied_job.gender }}</td>
+                            <td>{{ applied_job.age }}</td>
+                            <td>
+                                {% if applied_job.cv_path %}
+                                    <a href="{{ url_for('download_cv', cv_path=applied_job.cv_path) }}" class="btn btn-primary">Download CV</a>
+                                {% else %}
+                                    No CV available
+                                {% endif %}
+                                <form method="post" action="{{ url_for('delete_applied_job', applied_job_id=applied_job.id) }}" style="display: inline;">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No jobs have been applied for.</p>
+        {% endif %}
+    </div>
+</body>
+<script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("dropdownMenu");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+  
+    function showDropdown() {
+      var dropdown = document.getElementById("dropdownMenu");
+      dropdown.style.display = "block";
+    }
+  
+    // Hide dropdown when clicking outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.style.display === "block") {
+            openDropdown.style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</html>

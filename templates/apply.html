@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AMCO</title>
+        <link rel="icon" type="image/png" href="/static/images/logo.png">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+      <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .footer{
+  position: relative;
+  top: 30px;
+}
+        @media (min-width: 350px) and (max-width: 487px) {
+            .footer{
+                top: 120px;
+            }
+    .footer-col2 .social-links a{
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      background-color: rgba(255,255,255,0.2);
+      margin: -16px 20px 80px 0;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+    .footer-col2 .social-links{
+      display: flex;
+      position: relative;
+
+    }
+    
+   
+    .footer-col2 .social-links a:hover{
+      color: #24262b;
+      background-color: #ffffff;
+    }
+    .footer-col2{
+      width: 100%;
+      max-height: 130px;
+      position: relative;
+      top: 199px;
+      left: -520px;
+  }
+  }
+        .call h2 {
+    position: relative;
+    font-size: 16px;
+    left: 46px;
+    bottom: 3.3px;
+    color: lightgreen;
+  }
+        .navbar-default {
+            background-color: #11474D;
+            border-color: #11474D;
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+        .navbar-default .navbar-brand {
+            color: white;
+        }
+        .navbar-default .navbar-nav>li>a {
+            color: white;
+        }
+        .navbar-default .navbar-nav>li>a:hover,
+        .navbar-default .navbar-nav>li>a:focus {
+            background-color: #0A2C2F;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #11474D;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0A2C2F;
+        }
+        /* Centered text */
+        .centered-text {
+            text-align: center;
+            margin-top: 50px; /* Adjust as needed */
+            color: red; /* Change the color of the text */
+        }
+    </style>
+</head>
+<body class="vacancy">
+    <div class="arrow">
+      <a href="#menuList" title="Back to Top"><span class="fas fa-angle-up"></span></a>
+    </div>
+    <div class="arrow1">
+      <a href="#footer" title="Scroll to Bottom" onclick="scrollToBottom()"><span class="fas fa-angle-down"></span></a>
+  </div>
+    <!-- Header -->
+   <!-- Header -->
+   <header class="header" id="header">
+    <nav>
+      <div class="logo-container">
+        <a href="/"><img src="/static/images/logo.png" alt="Your Logo" class="logo"></a>
+      </div>
+      <ul id="menuList">
+        <li><a id="home" href="/">Home</a></li>
+        <li class="dropdown">
+          <a class="dropbtn" href="#" onclick="toggleDropdown()" onmouseover="showDropdown()">About
+            <span class="fas fa-angle-down"></span>
+          </a>
+          <div class="dropdown-content" id="dropdownMenu">
+            <a id="about" href="/about">WHO WE ARE</a>
+            <a href="/">Portfolio</a>
+          </div>
+        </li>
+        <li><a href="/">Service</a></li>
+        <li><a id="products" href="/prod">Products</a></li>
+        <li><a href="/">Contact</a></li>
+        <li><a id="vacancy" href="/">Vacancy</a></li>
+        <li><a id="login" href="sagin"><i class="fas fa-user"></i></a></li>
+      </ul>
+      <div class="menu-icon">
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+      </div>
+      <a href="tel:+1234567890">
+        <div class="call">
+          <h2>Call Us</h2>
+          <div class="phone">
+            <img src="/static/images/call.png" alt="Call Icon">
+          </div>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+      </a>
+      <!--call button-->
+    </nav>
+    
+  </header>
+  
+
+  
+  <div class="social-widget">
+    <a href="#" class="social-icon " data-social="Telegram"><i class="fab fa-telegram"></i><span class="social-name">Telegram</span></a>
+    <a href="#" class="social-icon " data-social="Instagram"><i class="fab fa-instagram"></i><span class="social-name">Instagram</span></a>
+    <a href="https://www.facebook.com/profile.php?id=61559804274395" class="social-icon " data-social="Facebook"><i class="fab fa-facebook"></i><span class="social-name">Facebook</span></a>
+    <a href="#" class="social-icon " data-social="LinkedIn"><i class="fab fa-linkedin"></i><span class="social-name">LinkedIn</span></a>
+    <a href="#" class="social-icon " data-social="YouTube"><i class="fab fa-youtube"></i><span class="social-name">YouTube</span></a>
+    <a href="https://www.tiktok.com/@amco_interiorfurniture?_t=8mXEfzKb4HV&_r=1" class="social-icon " data-social="TikTok"><i class="fab fa-tiktok"></i><span class="social-name">TikTok</span></a>
+  </div>
+  
+    <h1>Job Application - {{ job.title }}</h1>
+
+    {% if job.deadline < current_time %}
+        <div class="centered-text">
+            <p>Application deadline has passed.</p>
+        </div>
+    {% else %}
+        <form action="/apply/{{ job.id }}" method="post" enctype="multipart/form-data">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" required>
+
+            <label for="father_name">Father Name:</label>
+            <input type="text" name="father_name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" required>
+
+            <label for="cv">CV:</label>
+            <input type="file" name="cv" required>
+
+            <button type="submit">Apply</button>
+        </form>
+    {% endif %}
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="/about">about us</a></li>
+              <li><a href="/home">our services</a></li>
+              <li><a href="/prod">produts</a></li>
+              <li><a href="/home">portfolio</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Amco</h4>
+            <ul>
+              <li><a href="/prod">Our furniture </a></li>
+              <li><a href="/bloog" id="blog">Blog</a></li>
+              <li><a href="/bloog" id="blog">News</a></li>
+              <li><a href="/bloog" id="blog">Event</a></li>
+  
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="mailto:amco18630@gmail.com">email<br>
+                amco18630@gmail.com</a>
+              </li>
+              <li><a href="#">Location<br>
+                  Meskelflower infront of Dreamlinerhotel </a></li>
+              <li><a href="tel:0945371779">phone <br />
+                0945371779</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col2">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/profile.php?id=61559804274395"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/amco_interiorfurniture/?igsh=MTR5b3dubWJibm9qdw%3D%3D"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="TikTok': 'https://www.tiktok.com/@amco_interiorfurniture?_t=8mXEfzKb4HV&_r=1"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copy">
+          Copyright 2024 © || 
+          <a href="https://www.instagram.com/namikdevelopment/?igsh=dG5pbzIxdDdzaTUz" class="namik">Designed By NAMIK DEVELOPMENT</a>
+            
+        </div>
+      </div>
+    </footer>
+     
+    
+      <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "300px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+      <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+       <script>document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.gallery-image');
+        const videoModal = document.getElementById('video-modal');
+        const videoContainer = document.getElementById('video-container');
+        const closeBtn = document.getElementById('close-btn');
+      
+        images.forEach(image => {
+          image.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video-id');
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            iframe.allowFullscreen = true;
+      
+            // Get position and size of clicked image
+            const rect = image.getBoundingClientRect();
+            const imageWidth = rect.width;
+            const imageHeight = rect.height;
+            const imageTop = rect.top + window.scrollY;
+            const imageLeft = rect.left + window.scrollX;
+      
+            // Set video modal position
+            videoModal.style.top = imageTop + 'px';
+            videoModal.style.left = imageLeft + 'px';
+      
+            // Set video container size
+            videoContainer.style.width = imageWidth + 'px';
+            videoContainer.style.height = imageHeight + 'px';
+      
+            videoContainer.appendChild(iframe);
+            videoModal.style.display = 'block';
+          });
+        });
+      
+        closeBtn.addEventListener('click', function() {
+          videoContainer.innerHTML = ''; // Clear the iframe content
+          videoModal.style.display = 'none';
+        });
+      
+        // Close the modal when clicking outside the video container
+        window.addEventListener('click', function(event) {
+          if (event.target === videoModal) {
+            videoContainer.innerHTML = ''; // Clear the iframe content
+            videoModal.style.display = 'none';
+          }
+        });
+      });
+      </script>
+      <script>
+        document.querySelectorAll('iframe').forEach(iframe => {
+            // Adding a message event listener to detect video play and pause events
+            window.addEventListener('message', function(event) {
+                const data = JSON.parse(event.data);
+                if (data.event === 'infoDelivery' && data.info) {
+                    if (data.info.playerState === 1) {
+                        // Video is playing
+                        document.querySelector('.slides').style.animationPlayState = 'paused';
+                    } else if (data.info.playerState === 2) {
+                        // Video is paused
+                        document.querySelector('.slides').style.animationPlayState = 'running';
+                    }
+                }
+            });
+    
+            // Function to send a postMessage to the YouTube iframe
+            function sendMessage(action, value) {
+                iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: action,
+                    args: [value]
+                }), '*');
+            }
+    
+            // Attach event listener to check when iframe is interacted with
+            iframe.addEventListener('load', () => {
+                sendMessage('addEventListener', 'onStateChange');
+            });
+        });
+    </script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+      
+        menuIcon.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+      });
+      
+      let slideIndex = 0;
+      showSlide(slideIndex);
+      
+      function showSlide(n) {
+          const slides = document.querySelectorAll('.carousel img');
+          const dots = document.querySelectorAll('.dot');
+      
+          // Hide all slides and remove active class from dots
+          slides.forEach(slide => slide.style.display = "none");
+          dots.forEach(dot => dot.classList.remove("active"));
+      
+          // Adjust slide index to ensure it stays within bounds
+          slideIndex = (n + slides.length) % slides.length;
+      
+          // Show current slide and set corresponding dot as active
+          slides[slideIndex].style.display = "block";
+          dots[slideIndex].classList.add("active");
+      }
+      
+      // Event listener for previous button
+      document.getElementById("prev").addEventListener("click", function() {
+          showSlide(slideIndex - 1);
+      });
+      
+      // Event listener for next button
+      document.getElementById("next").addEventListener("click", function() {
+          showSlide(slideIndex + 1);
+      });
+      
+      // Automatic slide change every 3 seconds
+      setInterval(function() {
+          showSlide(slideIndex + 1);
+      }, 3000);
+      
+      
+      // Function to start counting animation
+      function startCountingAnimation(targetElement) {
+          const startNumber = 1; // Start counting from 1
+          const endNumber = 100;
+          const duration = 4000; // Animation duration in milliseconds
+          const steps = endNumber - startNumber; // Total steps from start to end
+          const interval = duration / steps; // Interval for each step
+        
+          let currentNumber = startNumber;
+          const increment = 1; // Increment by 1 for each step
+        
+          const intervalId = setInterval(() => {
+            if (currentNumber <= endNumber) {
+              // Update the displayed number
+              targetElement.textContent = currentNumber;
+              currentNumber += increment;
+            } else {
+              // Display "100+" when the count reaches 100
+              targetElement.textContent = "100+";
+              // Stop the interval when reaching the end number
+              clearInterval(intervalId);
+            }
+          }, interval);
+        }
+        
+        // Function to observe element intersection
+        function CountingAnimation(countingRef, startCountingAnimation) {
+          const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // Trigger when 50% of the target element is visible
+          };
+        
+          const callback = (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                startCountingAnimation(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          };
+        
+          const observer = new IntersectionObserver(callback, options);
+          if (countingRef) {
+            observer.observe(countingRef);
+          }
+        
+          return () => {
+            if (countingRef) {
+              observer.unobserve(countingRef);
+            }
+          };
+        }
+        
+        // Get references to the counting containers
+        const countingRefCr3 = document.getElementById("countingCr3");
+        const countingRefCr6 = document.getElementById("countingCr6");
+        
+        // Start counting animation for cr3
+        CountingAnimation(countingRefCr3, startCountingAnimation);
+        // Start counting animation for cr6
+        CountingAnimation(countingRefCr6, startCountingAnimation);
+        
+      
+        // When the page is scrolled, check if the scroll position is greater than 100 pixels
+      // Smooth scroll to the top when the arrow is clicked
+  
+      /* */
+      
+      
+      /*socialmedia */
+      document.addEventListener('DOMContentLoaded', function() {
+        const socialIcons = document.querySelectorAll('.social-icon');
+        
+        socialIcons.forEach(icon => {
+          icon.addEventListener('click', function(event) {
+            event.preventDefault();
+            const socialName = icon.getAttribute('data-social');
+            const socialUrl = getSocialUrl(socialName);
+            window.open(socialUrl, '_blank');
+          });
+        });
+        
+        function getSocialUrl(socialName) {
+          // Define your social media URLs
+          const socialUrls = {
+          'Telegram': 'https://telegram.org/',
+          'Instagram': 'https://www.instagram.com/amco_interiorfurniture/?igsh=MTR5b3dubWJibm9qdw%3D%3D',
+          'Facebook': 'https://www.facebook.com/profile.php?id=61559804274395',
+          'LinkedIn': 'https://www.linkedin.com/',
+          'YouTube': 'https://www.youtube.com/@Amco-kv7zz',
+          'TikTok': 'https://www.tiktok.com/@amco_interiorfurniture?_t=8mXEfzKb4HV&_r=1'
+        };
+          return socialUrls[socialName];
+        }
+      });
+      
+      
+      
+      
+          function sendEmail() {
+              // Get form data
+              const name = document.getElementById('name').value;
+              const email = document.getElementById('email').value;
+              const phone = document.getElementById('phone').value;
+              const message = document.getElementById('message').value;
+      
+              // Send email using EmailJS
+              emailjs.send("service_l4r6gkd", "template_ab6zjtk", {
+                  from_name: name,
+                  from_email: email,
+                  phone: phone,
+                  message: message
+              })
+              .then(function(response) {
+                  console.log("Email sent successfully", response);
+                  alert("Your message has been sent successfully!");
+                  // Optionally, clear the form fields
+                  document.getElementById('name').value = '';
+                  document.getElementById('email').value = '';
+                  document.getElementById('phone').value = '';
+                  document.getElementById('message').value = '';
+              }, function(error) {
+                  console.error("Error sending email", error);
+                  alert("An error occurred while sending your message. Please try again later.");
+              });
+          }
+          /* slider*/
+          document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slider img');
+            const navButtons = document.querySelectorAll('.slider-nav a');
+            let currentSlide = 0;
+            let intervalId;
+        
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.style.display = 'block';
+                    } else {
+                        slide.style.display = 'none';
+                    }
+                });
+            }
+        
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+        
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+        
+            function startAutoPlay() {
+                intervalId = setInterval(nextSlide, 3000);
+            }
+        
+            function stopAutoPlay() {
+                clearInterval(intervalId);
+            }
+        
+            // Add event listeners to navigation buttons
+            navButtons.forEach((button, index) => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    stopAutoPlay();
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                    startAutoPlay();
+                });
+            });
+        
+            // Start auto-play
+            startAutoPlay();
+        });
+        
+      /* hoMEjs*/
+      const myslide = document.querySelectorAll('.myslide'),
+            dot = document.querySelectorAll('.dot');
+      let counter = 1;
+      slidefun(counter);
+      
+      let timer = setInterval(autoSlide, 8000);
+      function autoSlide() {
+          counter += 1;
+          slidefun(counter);
+      }
+      function plusSlides(n) {
+          counter += n;
+          slidefun(counter);
+          resetTimer();
+      }
+      function currentSlide(n) {
+          counter = n;
+          slidefun(counter);
+          resetTimer();
+      }
+      function resetTimer() {
+          clearInterval(timer);
+          timer = setInterval(autoSlide, 8000);
+      }
+      
+      function slidefun(n) {
+          
+          let i;
+          for(i = 0;i<myslide.length;i++){
+              myslide[i].style.display = "none";
+          }
+          for(i = 0;i<dot.length;i++) {
+              dot[i].className = dot[i].className.replace(' active', '');
+          }
+          if(n > myslide.length){
+             counter = 1;
+             }
+          if(n < 1){
+             counter = myslide.length;
+             }
+          myslide[counter - 1].style.display = "block";
+          dot[counter - 1].className += " active";
+      }
+      /*email */
+      
+      emailjs.init('D3VuuvmzMea1ZpQ3l');
+      
+        // Event listener for form submission
+        document.getElementById('submit-btn').addEventListener('click', function() {
+          sendEmail();
+        });
+      
+      function sendEmail() {
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+      
+        // Send email using EmailJS
+        emailjs.send("service_l4r6gkd", "template_ab6zjtk", {
+          from_name: name,
+          from_email: email,
+          phone: phone,
+          message: message
+        })
+        .then(function(response) {
+          console.log("Email sent successfully", response);
+          // Show success message
+          showAlert("Your message has been sent successfully!");
+          // Optionally, clear the form fields
+          clearFormFields();
+      }, function(error) {
+          console.error("Error sending email", error);
+          // Show error message
+          showAlert("An error occurred while sending your message. Please try again later.", true);
+      });
+      }
+      
+      function showAlert(message, isError = false) {
+      alert(message); // Simple alert popup
+      // You can customize this to use a styled modal dialog for a better user experience
+      }
+      
+      function clearFormFields() {
+      // Clear form fields
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('phone').value = '';
+      document.getElementById('message').value = '';
+      }
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        const lines = document.querySelectorAll('.for-decades-amco .line');
+      
+        // Function to trigger auto-write animation for each line
+        function autoWriteLine(line) {
+          // Start animation
+          line.style.animation = 'autoWrite 1s steps(40) forwards';
+          // Add event listener for animation end
+          line.addEventListener('animationend', function() {
+            // Ensure line remains visible after animation
+            line.style.opacity = '1';
+            // Hide the border line
+            line.classList.add('hide-border');
+            // Show the next line if available
+            const nextLineIndex = Array.from(lines).indexOf(this) + 1;
+            if (nextLineIndex < lines.length) {
+              autoWriteLine(lines[nextLineIndex]);
+            }
+          });
+        }
+      
+        // Trigger the animation sequence for the first line
+        autoWriteLine(lines[0]);
+      });
+      
+      
+      
+      document.addEventListener('DOMContentLoaded', (event) => {
+        let items = document.querySelectorAll('.carousel-container .carousel-list .carousel-item');
+        let container = document.querySelector('.carousel-container');
+        let dots = document.querySelectorAll('.carousel-dots li');
+        let nextBtn = document.querySelector('.carousel-arrows .next');
+        let prevBtn = document.querySelector('.carousel-arrows .prev');
+      
+        let lastIndex = items.length - 1;
+        let activeIndex = 0;
+        let zIndex = 2;
+      
+        nextBtn.onclick = () => {
+            let newIndex = activeIndex + 1 > lastIndex ? 0 : activeIndex + 1;
+            setActiveItem(newIndex);
+        };
+      
+        prevBtn.onclick = () => {
+            let newIndex = activeIndex - 1 < 0 ? lastIndex : activeIndex - 1;
+            setActiveItem(newIndex);
+        };
+      
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                setActiveItem(index);
+            });
+        });
+      
+        const setActiveItem = (newIndex) => {
+            if (newIndex === activeIndex) return;
+            activeIndex = newIndex;
+            showSlider();
+        };
+      
+        const showSlider = () => {
+            container.style.pointerEvents = 'none';
+            let activeItem = document.querySelector('.carousel-container .carousel-list .carousel-item.active');
+            if (activeItem) activeItem.classList.remove('active');
+            zIndex++;
+            items[activeIndex].style.zIndex = zIndex;
+            items[activeIndex].classList.add('active');
+      
+            container.classList.add('effect');
+      
+            let activeDot = document.querySelector('.carousel-dots li.active');
+            if (activeDot) activeDot.classList.remove('active');
+            dots[activeIndex].classList.add('active');
+      
+            clearTimeout(removeEffect);
+            removeEffect = setTimeout(() => {
+                container.classList.remove('effect');
+                container.style.pointerEvents = 'auto';
+            }, 1500);
+      
+            clearTimeout(autoRun);
+            autoRun = setTimeout(() => {
+                nextBtn.click();
+            }, 5000);
+        };
+      
+        let removeEffect;
+        let autoRun = setTimeout(() => {
+            nextBtn.click();
+        }, 5000);
+      });
+    </script>
+    
+  
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const menuIcon = document.querySelector('.menu-icon');
+          const navLinks = document.querySelector('.nav-links');
+  
+          if (menuIcon) { // Check if menuIcon exists
+              menuIcon.addEventListener('click', function() {
+                  navLinks.classList.toggle('active'); // Toggle the 'active' class on the nav links
+              });
+          }
+      });
+  
+      let products = null;
+      // get datas from file json
+      fetch('products.json')
+          .then(response => response.json())
+          .then(data => {
+              products = data;
+              addDataToHTML();
+          });
+  
+      function addDataToHTML() {
+          // remove datas default from HTML
+          let listProductHTML = document.querySelector('.listProduct');
+  
+          // add new datas
+          if (products != null) { // if has data
+              products.forEach(product => {
+                  let newProduct = document.createElement('a');
+                  newProduct.href = '/detail.html?id=' + product.id;
+                  newProduct.classList.add('item');
+                  newProduct.innerHTML =
+                      `<img src="${product.image}" alt="">
+                  <h2>${product.name}</h2>
+                  <div class="price">ETB ${product.price}</div>`;
+                  listProductHTML.appendChild(newProduct);
+              });
+          }
+      }
+  
+      
+  </script>
+  </body>
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("dropdownMenu");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+  
+    function showDropdown() {
+      var dropdown = document.getElementById("dropdownMenu");
+      dropdown.style.display = "block";
+    }
+  
+    // Hide dropdown when clicking outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.style.display === "block") {
+            openDropdown.style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+  </html>
+  <!--
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <a class="navbar-brand" href="#">
+                      <img src="/static/images/logo.png" alt="Logo" height="30">
+                  </a>
+              </div>
+              <ul class="nav navbar-nav">
+                  <li><a href="/home">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="/prod">Products</a></li>
+                  <li><a href="#">Portfolio</a></li>
+                  <li><a href="/">Vacancy</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/lagin"><span class="glyphicon glyphicon-user"></span></a></li>
+              </ul>
+          </div>
+      </nav>
+  -->
+  
