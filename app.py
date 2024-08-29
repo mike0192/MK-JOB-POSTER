@@ -5,11 +5,6 @@ import os
 from werkzeug.utils import secure_filename
 from datetime import datetime
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
-import json
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
